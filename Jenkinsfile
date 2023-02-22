@@ -21,6 +21,15 @@ pipeline{
             }
         }
 
+        stage("Release"){
+            steps{s
+                sh '''
+                    oc project eambuk-greetings
+                    oc start-build greeting-console --follow --wait
+                '''
+            }
+        }
+
         // Add the Release stage here
     }
 }
