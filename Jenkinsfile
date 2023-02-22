@@ -22,7 +22,7 @@ pipeline{
         }
 
         stage("Release"){
-            steps{s
+            steps{
                 sh '''
                     oc project eambuk-greetings
                     oc start-build greeting-console --follow --wait
